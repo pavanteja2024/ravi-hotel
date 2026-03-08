@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Ravi Hotel | Fresh Quality Tiffin</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+text-align:center;
+background-image:url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+background-size:cover;
+background-attachment:fixed;
+}
+
+.overlay{
+background:rgba(255,255,255,0.92);
+min-height:100vh;
+}
+
+header{
+background:linear-gradient(135deg,#ff6600,#ff8533);
+color:white;
+padding:60px;
+}
+
+.menu{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+padding:40px;
+}
+
+.card{
+background:white;
+width:240px;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+.price{
+color:#ff6600;
+font-size:20px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.order-btn{
+background:#25D366;
+color:white;
+padding:14px 30px;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+margin:20px;
+}
+
+footer{
+background:#222;
+color:white;
+padding:30px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<header>
+
+<h1>Ravi Hotel</h1>
+<p>Fresh Quality Tiffin</p>
+<p>Delivery available only in Madhira</p>
+
+</header>
+
+<h2>Menu</h2>
+
+<div class="menu">
+
+<div class="card">
+<img src="idli.jpg">
+<h3>Idli (4 pcs)</h3>
+<div class="price">₹30</div>
+</div>
+
+<div class="card">
+<img src="plain-dosa.jpg">
+<h3>Plain Dosa</h3>
+<div class="price">₹30</div>
+</div>
+
+<div class="card">
+<img src="egg-dosa.jpg">
+<h3>Egg Dosa</h3>
+<div class="price">₹50</div>
+</div>
+
+<div class="card">
+<img src="onion-dosa.jpg">
+<h3>Onion Dosa</h3>
+<div class="price">₹40</div>
+</div>
+
+<div class="card">
+<img src="bonda.jpg">
+<h3>Bonda (10 pcs)</h3>
+<div class="price">₹30</div>
+</div>
+
+</div>
+
+<a href="https://wa.me/918374902550?text=Hello Ravi Hotel I want to order tiffin">
+<button class="order-btn">Order on WhatsApp</button>
+</a>
+
+<footer>
+
+<h3>Address</h3>
+
+<p>
+Ravi Hotel<br>
+Beside Ramandham Hospital<br>
+Azad Road<br>
+Madhira 507203<br>
+Telangana
+</p>
+
+<p>📞 8374902550</p>
+
+</footer>
+
+</div>
+
+</body>
+</html>
