@@ -29,40 +29,60 @@ padding:60px;
 }
 
 header h1{
-font-size:40px;
+font-size:42px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+}
+
+h2{
+margin-top:40px;
+font-size:28px;
 }
 
 .menu{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:30px;
+gap:35px;
 padding:40px;
 }
 
 .card{
 background:white;
-width:250px;
+width:260px;
 border-radius:15px;
 overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
 .card img{
 width:100%;
-height:170px;
+height:180px;
 object-fit:cover;
+transition:0.4s;
+}
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+.card h3{
+margin:10px 0 5px 0;
 }
 
 .price{
 color:#ff6600;
-font-size:20px;
 font-weight:bold;
+font-size:20px;
 margin-bottom:15px;
 }
 
@@ -73,8 +93,14 @@ padding:14px 30px;
 border:none;
 border-radius:8px;
 font-size:18px;
-margin:20px;
+margin:25px;
 cursor:pointer;
+transition:0.3s;
+}
+
+.order:hover{
+background:#1ebe5d;
+transform:scale(1.05);
 }
 
 footer{
@@ -82,6 +108,10 @@ background:#222;
 color:white;
 padding:30px;
 margin-top:40px;
+}
+
+footer p{
+line-height:1.6;
 }
 
 </style>
@@ -98,7 +128,7 @@ margin-top:40px;
 
 <p>Fresh Quality Tiffin</p>
 
-<p>Delivery only in Madhira</p>
+<p>Delivery available only in Madhira</p>
 
 </header>
 
@@ -138,10 +168,12 @@ margin-top:40px;
 
 </div>
 
-<a href="https://wa.me/918374902550?text=Hello Ravi Hotel. I want to order tiffin. After sending this message please share your Google Maps location so we can deliver easily.">
+<a href="https://wa.me/918374902550?text=Hello Ravi Hotel I want to order tiffin">
 
 <button class="order">
+
 Order on WhatsApp
+
 </button>
 
 </a>
@@ -149,11 +181,13 @@ Order on WhatsApp
 <footer>
 
 <p>
+
 Ravi Hotel<br>
 Beside Ramandham Hospital<br>
 Azad Road<br>
 Madhira 507203<br>
 Telangana
+
 </p>
 
 <p>📞 8374902550</p>
