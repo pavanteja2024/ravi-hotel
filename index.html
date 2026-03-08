@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <meta charset="UTF-8">
@@ -27,6 +28,10 @@ color:white;
 padding:60px;
 }
 
+header h1{
+font-size:40px;
+}
+
 .menu{
 display:flex;
 flex-wrap:wrap;
@@ -37,7 +42,7 @@ padding:40px;
 
 .card{
 background:white;
-width:240px;
+width:250px;
 border-radius:15px;
 overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,0.15);
@@ -61,15 +66,15 @@ font-weight:bold;
 margin-bottom:15px;
 }
 
-.order-btn{
+.order{
 background:#25D366;
 color:white;
 padding:14px 30px;
 border:none;
 border-radius:8px;
-font-size:16px;
-cursor:pointer;
+font-size:18px;
 margin:20px;
+cursor:pointer;
 }
 
 footer{
@@ -90,8 +95,10 @@ margin-top:40px;
 <header>
 
 <h1>Ravi Hotel</h1>
+
 <p>Fresh Quality Tiffin</p>
-<p>Delivery available only in Madhira</p>
+
+<p>Delivery only in Madhira</p>
 
 </header>
 
@@ -102,42 +109,44 @@ margin-top:40px;
 <div class="card">
 <img src="idli.jpg">
 <h3>Idli (4 pcs)</h3>
-<div class="price">₹30</div>
+<p class="price">₹30</p>
 </div>
 
 <div class="card">
 <img src="plain-dosa.jpg">
 <h3>Plain Dosa</h3>
-<div class="price">₹30</div>
+<p class="price">₹30</p>
 </div>
 
 <div class="card">
 <img src="egg-dosa.jpg">
 <h3>Egg Dosa</h3>
-<div class="price">₹50</div>
+<p class="price">₹50</p>
 </div>
 
 <div class="card">
 <img src="onion-dosa.jpg">
 <h3>Onion Dosa</h3>
-<div class="price">₹40</div>
+<p class="price">₹40</p>
 </div>
 
 <div class="card">
 <img src="bonda.jpg">
 <h3>Bonda (10 pcs)</h3>
-<div class="price">₹30</div>
+<p class="price">₹30</p>
 </div>
 
 </div>
 
-<a href="https://wa.me/918374902550?text=Hello Ravi Hotel I want to order tiffin">
-<button class="order-btn">Order on WhatsApp</button>
+<a href="https://wa.me/918374902550?text=Hello Ravi Hotel. I want to order tiffin. After sending this message please share your Google Maps location so we can deliver easily.">
+
+<button class="order">
+Order on WhatsApp
+</button>
+
 </a>
 
 <footer>
-
-<h3>Address</h3>
 
 <p>
 Ravi Hotel<br>
@@ -154,4 +163,5 @@ Telangana
 </div>
 
 </body>
+
 </html>
