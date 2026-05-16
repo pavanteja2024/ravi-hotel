@@ -1,31 +1,46 @@
+# Premium Ravi Hotel Website (Swiggy Style)
+
+Replace your current `index.html` with the code below.
+
+Save all images in the SAME folder:
+
+* idli.jpg
+* plain-dosa.jpg
+* egg-dosa.jpg
+* onion-dosa.jpg
+* bonda.jpg
+
+Then upload updated `index.html` to GitHub.
+
+---
+
+```html
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<title>Ravi Hotel | Fresh Quality Tiffin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravi Hotel | Madhira</title>
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial, sans-serif;
-text-align:center;
-background-image:url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
-background-size:cover;
-background-attachment:fixed;
 }
 
-.overlay{
-background:rgba(255,255,255,0.92);
-min-height:100vh;
+body{
+background:#f5f5f5;
 }
 
 header{
 background:linear-gradient(135deg,#ff6600,#ff8533);
 color:white;
-padding:60px;
+padding:40px 20px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 header h1{
@@ -35,167 +50,368 @@ margin-bottom:10px;
 
 header p{
 font-size:18px;
+margin-top:5px;
 }
 
-h2{
-margin-top:40px;
-font-size:28px;
+.note{
+background:white;
+padding:15px;
+text-align:center;
+font-weight:bold;
+color:#444;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.menu-title{
+text-align:center;
+font-size:38px;
+margin:40px 0 20px;
+color:#222;
 }
 
 .menu{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:35px;
-padding:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:20px;
+max-width:1300px;
+margin:auto;
 }
 
 .card{
 background:white;
-width:260px;
-border-radius:15px;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+box-shadow:0 6px 18px rgba(0,0,0,0.12);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 15px 30px rgba(0,0,0,0.2);
+transform:translateY(-8px);
 }
 
 .card img{
 width:100%;
-height:180px;
+height:220px;
 object-fit:cover;
-transition:0.4s;
 }
 
-.card:hover img{
-transform:scale(1.08);
+.card-content{
+padding:20px;
+text-align:center;
 }
 
 .card h3{
-margin:10px 0 5px 0;
+font-size:28px;
+margin-bottom:10px;
 }
 
 .price{
-color:#ff6600;
+font-size:24px;
 font-weight:bold;
-font-size:20px;
+color:#ff6600;
 margin-bottom:15px;
 }
 
-.order{
-background:#25D366;
-color:white;
-padding:14px 30px;
-border:none;
-border-radius:8px;
-font-size:18px;
-margin:25px;
-cursor:pointer;
-transition:0.3s;
+.controls{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
 }
 
-.order:hover{
-background:#1ebe5d;
-transform:scale(1.05);
+.controls button{
+width:40px;
+height:40px;
+border:none;
+border-radius:50%;
+background:#ff6600;
+color:white;
+font-size:24px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.quantity{
+font-size:24px;
+font-weight:bold;
+}
+
+.cart{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:18px 28px;
+border-radius:50px;
+font-size:22px;
+font-weight:bold;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+cursor:pointer;
+z-index:1000;
+}
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.popup-content{
+background:white;
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:500px;
+}
+
+.popup-content h2{
+margin-bottom:20px;
+text-align:center;
+}
+
+.popup-content input,
+.popup-content textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+.place-btn{
+width:100%;
+padding:15px;
+border:none;
+background:#25D366;
+color:white;
+font-size:20px;
+border-radius:12px;
+cursor:pointer;
+font-weight:bold;
 }
 
 footer{
 background:#222;
 color:white;
+text-align:center;
 padding:30px;
-margin-top:40px;
-}
-
-footer p{
-line-height:1.6;
+margin-top:60px;
+line-height:1.8;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="overlay">
-
 <header>
-
 <h1>Ravi Hotel</h1>
-
 <p>Fresh Quality Tiffin</p>
-
-<p>Delivery available only in Madhira</p>
-
+<p>Free Delivery in Madhira 🚚</p>
 </header>
 
-<h2>Menu</h2>
+<div class="note">
+Minimum Order ₹100 • Please share Google Maps location after ordering 📍
+</div>
+
+<h2 class="menu-title">Our Menu</h2>
 
 <div class="menu">
 
 <div class="card">
 <img src="idli.jpg">
+<div class="card-content">
 <h3>Idli (4 pcs)</h3>
-<p class="price">₹30</p>
+<div class="price">₹30</div>
+<div class="controls">
+<button onclick="changeQty('Idli',30,-1)">-</button>
+<span class="quantity" id="Idli">0</span>
+<button onclick="changeQty('Idli',30,1)">+</button>
+</div>
+</div>
 </div>
 
 <div class="card">
 <img src="plain-dosa.jpg">
+<div class="card-content">
 <h3>Plain Dosa</h3>
-<p class="price">₹30</p>
+<div class="price">₹30</div>
+<div class="controls">
+<button onclick="changeQty('Plain Dosa',30,-1)">-</button>
+<span class="quantity" id="Plain Dosa">0</span>
+<button onclick="changeQty('Plain Dosa',30,1)">+</button>
+</div>
+</div>
 </div>
 
 <div class="card">
 <img src="egg-dosa.jpg">
+<div class="card-content">
 <h3>Egg Dosa</h3>
-<p class="price">₹50</p>
+<div class="price">₹50</div>
+<div class="controls">
+<button onclick="changeQty('Egg Dosa',50,-1)">-</button>
+<span class="quantity" id="Egg Dosa">0</span>
+<button onclick="changeQty('Egg Dosa',50,1)">+</button>
+</div>
+</div>
 </div>
 
 <div class="card">
 <img src="onion-dosa.jpg">
+<div class="card-content">
 <h3>Onion Dosa</h3>
-<p class="price">₹40</p>
+<div class="price">₹40</div>
+<div class="controls">
+<button onclick="changeQty('Onion Dosa',40,-1)">-</button>
+<span class="quantity" id="Onion Dosa">0</span>
+<button onclick="changeQty('Onion Dosa',40,1)">+</button>
+</div>
+</div>
 </div>
 
 <div class="card">
 <img src="bonda.jpg">
+<div class="card-content">
 <h3>Bonda (10 pcs)</h3>
-<p class="price">₹30</p>
+<div class="price">₹30</div>
+<div class="controls">
+<button onclick="changeQty('Bonda',30,-1)">-</button>
+<span class="quantity" id="Bonda">0</span>
+<button onclick="changeQty('Bonda',30,1)">+</button>
+</div>
+</div>
 </div>
 
 </div>
 
-<a href="https://wa.me/918374902550?text=Hello Ravi Hotel I want to order tiffin">
+<div class="cart" onclick="openPopup()">
+🛒 Cart ₹<span id="total">0</span>
+</div>
 
-<button class="order">
+<div class="popup" id="popup">
+<div class="popup-content">
+<h2>Place Your Order</h2>
 
-Order on WhatsApp
+<input type="text" id="name" placeholder="Your Name">
+<input type="tel" id="phone" placeholder="Phone Number">
+<textarea id="address" placeholder="Address"></textarea>
 
+<button class="place-btn" onclick="placeOrder()">
+Place Order on WhatsApp
 </button>
 
-</a>
+</div>
+</div>
 
 <footer>
-
 <p>
-
 Ravi Hotel<br>
 Beside Ramandham Hospital<br>
-Azad Road<br>
-Madhira 507203<br>
-Telangana
-
+Azad Road, Madhira<br>
+Telangana - 507203
 </p>
 
 <p>📞 8374902550</p>
-
 </footer>
 
-</div>
+<script>
+
+let cart = {};
+let total = 0;
+
+function changeQty(item, price, change){
+
+if(!cart[item]){
+cart[item] = 0;
+}
+
+cart[item] += change;
+
+if(cart[item] < 0){
+cart[item] = 0;
+}
+
+document.getElementById(item).innerText = cart[item];
+
+calculateTotal();
+}
+
+function calculateTotal(){
+
+total =
+(cart['Idli'] || 0) * 30 +
+(cart['Plain Dosa'] || 0) * 30 +
+(cart['Egg Dosa'] || 0) * 50 +
+(cart['Onion Dosa'] || 0) * 40 +
+(cart['Bonda'] || 0) * 30;
+
+document.getElementById('total').innerText = total;
+}
+
+function openPopup(){
+
+if(total < 100){
+alert('Minimum order should be ₹100');
+return;
+}
+
+document.getElementById('popup').style.display='flex';
+}
+
+function placeOrder(){
+
+let name = document.getElementById('name').value;
+let phone = document.getElementById('phone').value;
+let address = document.getElementById('address').value;
+
+let message = '🍽️ Ravi Hotel Order%0A%0A';
+
+for(let item in cart){
+if(cart[item] > 0){
+message += item + ' x ' + cart[item] + '%0A';
+}
+}
+
+message += '%0A💰 Total: ₹' + total;
+message += '%0A%0A👤 Name: ' + name;
+message += '%0A📞 Phone: ' + phone;
+message += '%0A📍 Address: ' + address;
+message += '%0A%0APlease share your Google Maps location.';
+
+window.open('https://wa.me/918374902550?text=' + message,'_blank');
+}
+
+</script>
 
 </body>
-
 </html>
+```
+
+# How to Update on GitHub
+
+1. Open your GitHub repo
+2. Open `index.html`
+3. Click pencil icon ✏️
+4. Replace old code with this code
+5. Click `Commit changes`
+6. Refresh website after 20 seconds
+
+Your website will become much more premium with:
+
+* * / - quantity buttons
+* cart system
+* total bill
+* customer details popup
+* WhatsApp checkout
+* modern UI
